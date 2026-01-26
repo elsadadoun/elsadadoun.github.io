@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Rapport de Stage SCOR – Elsa Dadoun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .rapport-container {
+      max-width: 900px;
+      margin: 100px auto 60px;
+      padding: 0 40px;
+      line-height: 1.7;
+    }
+
+    .rapport-header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 40px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-darker));
+      color: white;
+      border-radius: 16px;
+    }
+
+    .rapport-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--pink-main);
+    }
+
+    .rapport-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+      font-size: 0.95rem;
+    }
+
+    .rapport-info-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .rapport-info-item strong {
+      color: var(--pink-main);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .rapport-nav {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .rapport-nav h3 {
+      margin: 0 0 15px 0;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+    }
+
+    .rapport-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .rapport-nav li a {
+      display: block;
+      padding: 8px 16px;
+      background: var(--cream);
+      color: var(--text-main);
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .rapport-nav li a:hover {
+      background: var(--pink-main);
+      color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .rapport-section {
+      margin-bottom: 60px;
+      scroll-margin-top: 100px;
+    }
+
+    .rapport-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--green-dark);
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid var(--pink-main);
+    }
+
+    .rapport-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--green-darker);
+      margin: 30px 0 20px;
+    }
+
+    .rapport-section h4 {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin: 25px 0 15px;
+      font-weight: 600;
+    }
+
+    .rapport-section p {
+      margin-bottom: 15px;
+      color: var(--text-main);
+    }
+
+    .rapport-section ul, .rapport-section ol {
+      margin: 15px 0 15px 25px;
+      color: var(--text-main);
+    }
+
+    .rapport-section li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fff4d4;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid var(--pink-main);
+      margin: 25px 0;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .tech-item {
+      padding: 8px 16px;
+      background: var(--green-dark);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .rapport-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .rapport-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--green-dark);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .rapport-btn:hover {
+      background: var(--green-darker);
+      transform: translateY(-2px);
+    }
+
+    .rapport-btn--secondary {
+      background: white;
+      color: var(--green-dark);
+      border: 2px solid var(--green-dark);
+    }
+
+    .rapport-btn--secondary:hover {
+      background: var(--cream);
+    }
+
+    .rapport-btn--small {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+
+    .coming-soon {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff4d4;
+      border-radius: 16px;
+      margin: 40px 0;
+    }
+
+    .coming-soon h3 {
+      font-size: 1.8rem;
+      color: var(--green-dark);
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .rapport-container {
+        padding: 0 20px;
+        margin-top: 80px;
+      }
+
+      .rapport-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .rapport-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .rapport-nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAV -->
+  <header class="topbar">
+    <div class="topbar__logo"><a href="index.html" style="color: inherit; text-decoration: none;">Elsa Dadoun</a></div>
+    <nav class="topbar__nav">
+      <a href="index.html#about">À propos</a>
+      <a href="index.html#experience">Expérience</a>
+      <a href="index.html#skills">Compétences</a>
+      <a href="index.html#education">Formation</a>
+      <a href="index.html#contact" class="btn-pill btn-pill--small">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="rapport-container">
+      
+      <!-- En-tête du rapport -->
+      <div class="rapport-header">
+        <h1>Rapport de Stage</h1>
+        <p style="font-size: 1.2rem; margin: 10px 0;">BTS SIO 1<sup>ère</sup> année</p>
+        
+        <div class="rapport-info">
+          <div class="rapport-info-item">
+            <strong>Période</strong>
+            Janvier 2026
+          </div>
+          <div class="rapport-info-item">
+            <strong>Organisme</strong>
+            SCOR
+          </div>
+          <div class="rapport-info-item">
+            <strong>Enseignant référent</strong>
+            (À compléter)
+          </div>
+          <div class="rapport-info-item">
+            <strong>Tuteur de stage</strong>
+            (À compléter)
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="rapport-actions">
+        <a href="index.html#experience" class="rapport-btn rapport-btn--secondary">
+          ← Retour au portfolio
+        </a>
+      </div>
+
+      <!-- Coming soon -->
+      <div class="coming-soon">
+        <h3>🚀 Stage à venir</h3>
+        <p style="font-size: 1.1rem; color: #666;">
+          Le contenu de ce rapport sera complété après le stage en janvier 2026.
+        </p>
+        <p style="margin-top: 20px;">
+          <strong>Entreprise :</strong> SCOR – Entreprise de réassurance internationale<br>
+          <strong>Durée :</strong> 5 semaines
+        </p>
+      </div>
+
+      <!-- Navigation sommaire (structure pour plus tard) -->
+      <nav class="rapport-nav">
+        <h3>📑 Sommaire (à compléter)</h3>
+        <ul>
+          <li><a href="#remerciements">Remerciements</a></li>
+          <li><a href="#presentation">Présentation</a></li>
+          <li><a href="#contexte">Contexte</a></li>
+          <li><a href="#missions">Missions</a></li>
+          <li><a href="#environnement">Environnement technique</a></li>
+          <li><a href="#apports">Apports du stage</a></li>
+          <li><a href="#bilan">Bilan</a></li>
+        </ul>
+      </nav>
+
+      <!-- Sections vides à compléter -->
+      <section class="rapport-section" id="remerciements">
+        <h2>1. Remerciements</h2>
+        <p><em>À compléter après le stage...</em></p>
+      </section>
+
+      <section class="rapport-section" id="presentation">
+        <h2>2. Présentation de l'organisme d'accueil</h2>
+        <p><em>À compléter : présentation de SCOR, secteur d'activité, services...</em></p>
+      </section>
+
+      <section class="rapport-section" id="contexte">
+        <h2>3. Contexte et objectifs du stage</h2>
+        <p><em>À compléter : objectifs, compétences visées...</em></p>
+      </section>
+
+      <section class="rapport-section" id="missions">
+        <h2>4. Missions réalisées</h2>
+        <p><em>À compléter : description détaillée des missions...</em></p>
+      </section>
+
+      <section class="rapport-section" id="environnement">
+        <h2>5. Environnement technique</h2>
+        <p><em>À compléter : technologies, outils, langages utilisés...</em></p>
+      </section>
+
+      <section class="rapport-section" id="apports">
+        <h2>6. Apports du stage</h2>
+        <p><em>À compléter : compétences acquises, apprentissages...</em></p>
+      </section>
+
+      <section class="rapport-section" id="bilan">
+        <h2>7. Bilan et perspectives</h2>
+        <p><em>À compléter : bilan personnel, perspectives...</em></p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

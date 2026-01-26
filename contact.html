@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Contact – Anaïa Dadoun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">
+    <div class="logo-mark"></div>
+    <span>Anaïa&nbsp;Dadoun</span>
+  </div>
+  <nav>
+    <button class="nav-toggle" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="projets.html">Projets</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="section section--light" style="padding-top:110px;">
+    <h1 class="section-title">Me contacter</h1>
+    <p>
+      Une alternance, un stage, un projet freelance ou simplement une question ?
+      Tu peux m’écrire via ce formulaire ou directement par mail.
+    </p>
+
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:40px;margin-top:24px;align-items:flex-start;">
+      <form class="form" action="mailto:elsadadoun01@gmail.com" method="post" enctype="text/plain">
+        <div class="form-row">
+          <div>
+            <label for="nom">Nom</label>
+            <input id="nom" name="nom" type="text" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+        </div>
+        <div style="margin-top:14px;">
+          <label for="sujet">Sujet</label>
+          <input id="sujet" name="sujet" type="text" required>
+        </div>
+        <div style="margin-top:14px;">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div style="margin-top:18px;">
+          <button type="submit" class="btn-pill">Envoyer</button>
+        </div>
+      </form>
+
+      <aside class="card">
+        <h2 style="margin-top:0;">Informations</h2>
+        <p style="font-size:0.9rem;line-height:1.6;">
+          • <strong>Email :</strong> elsadadoun01@gmail.com<br>
+          • <strong>Téléphone :</strong> 06 66 04 78 83<br>
+          • <strong>Basée à :</strong> Créteil / Île-de-France
+        </p>
+        <p style="font-size:0.9rem;line-height:1.6;">
+          Je suis ouverte aux opportunités en développement web / data,
+          ainsi qu’aux projets qui mêlent technique, UI et pédagogie.
+        </p>        <div style="margin-top:20px;">
+          <a href="documents/CV_Elsa_Dadoun.pdf" download class="btn-pill" style="display:inline-block;text-decoration:none;">
+            📥 Télécharger mon CV
+          </a>
+        </div>      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>© 2025 – Portfolio d’Anaïa Dadoun.</span>
+  <span>Merci pour ta visite 💻</span>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

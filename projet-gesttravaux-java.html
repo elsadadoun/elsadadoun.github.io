@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>GestTravaux Pro – Version Java – Elsa Dadoun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .projet-container {
+      max-width: 1000px;
+      margin: 100px auto 60px;
+      padding: 0 40px;
+      line-height: 1.7;
+    }
+
+    .projet-header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 40px;
+      background: linear-gradient(135deg, #007396, #003d52);
+      color: white;
+      border-radius: 16px;
+    }
+
+    .projet-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .projet-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+      font-size: 0.95rem;
+    }
+
+    .projet-info-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .projet-info-item strong {
+      color: #ffd700;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .projet-nav {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .projet-nav h3 {
+      margin: 0 0 15px 0;
+      font-size: 1.1rem;
+      color: #007396;
+    }
+
+    .projet-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .projet-nav li a {
+      display: block;
+      padding: 8px 16px;
+      background: #e8f4f8;
+      color: #007396;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .projet-nav li a:hover {
+      background: #007396;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .projet-section {
+      margin-bottom: 60px;
+      scroll-margin-top: 100px;
+    }
+
+    .projet-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #007396;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #ffd700;
+    }
+
+    .projet-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #003d52;
+      margin: 30px 0 20px;
+    }
+
+    .projet-section h4 {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin: 25px 0 15px;
+      font-weight: 600;
+    }
+
+    .projet-section p {
+      margin-bottom: 15px;
+      color: var(--text-main);
+    }
+
+    .projet-section ul, .projet-section ol {
+      margin: 15px 0 15px 25px;
+      color: var(--text-main);
+    }
+
+    .projet-section li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #e8f4f8;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid #007396;
+      margin: 25px 0;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .tech-item {
+      padding: 8px 16px;
+      background: #007396;
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .projet-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .projet-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: #007396;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .projet-btn:hover {
+      background: #003d52;
+      transform: translateY(-2px);
+    }
+
+    .projet-btn--secondary {
+      background: white;
+      color: #007396;
+      border: 2px solid #007396;
+    }
+
+    .projet-btn--secondary:hover {
+      background: #e8f4f8;
+    }
+
+    .image-placeholder {
+      background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+      border: 2px dashed #007396;
+      border-radius: 12px;
+      padding: 60px 20px;
+      text-align: center;
+      margin: 25px 0;
+      color: #666;
+    }
+
+    .image-placeholder h4 {
+      margin: 0 0 10px 0;
+      color: #007396;
+    }
+
+    .grid-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 25px 0;
+    }
+
+    @media (max-width: 768px) {
+      .projet-container {
+        padding: 0 20px;
+        margin-top: 80px;
+      }
+
+      .projet-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .projet-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .projet-nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAV -->
+  <header class="topbar">
+    <div class="topbar__logo"><a href="index.html" style="color: inherit; text-decoration: none;">Elsa Dadoun</a></div>
+    <nav class="topbar__nav">
+      <a href="index.html#about">À propos</a>
+      <a href="index.html#experience">Expérience</a>
+      <a href="index.html#skills">Compétences</a>
+      <a href="index.html#education">Formation</a>
+      <a href="index.html#contact" class="btn-pill btn-pill--small">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="projet-container">
+      
+      <!-- En-tête du projet -->
+      <div class="projet-header">
+        <h1>☕ GestTravaux Pro – Version Java</h1>
+        <p style="font-size: 1.2rem; margin: 10px 0;">Application Desktop avec JavaFX</p>
+        
+        <div class="projet-info">
+          <div class="projet-info-item">
+            <strong>Technologie principale</strong>
+            JavaFX
+          </div>
+          <div class="projet-info-item">
+            <strong>Backend</strong>
+            Spring Boot
+          </div>
+          <div class="projet-info-item">
+            <strong>Base de données</strong>
+            MySQL
+          </div>
+          <div class="projet-info-item">
+            <strong>Type</strong>
+            Application Desktop
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="projet-actions">
+        <a href="projet-gesttravaux.html" class="projet-btn projet-btn--secondary">
+          ← Retour au projet
+        </a>
+        <a href="projet-gesttravaux-php.html" class="projet-btn projet-btn--secondary">
+          Voir la version PHP →
+        </a>
+      </div>
+
+      <!-- Sections -->
+      <section class="projet-section" id="presentation">
+        <h2>Présentation</h2>
+        <p>Application desktop développée avec <strong>JavaFX</strong>, offrant une interface utilisateur riche et performante pour la gestion complète des chantiers et la création de devis professionnels.</p>
+        
+        <div class="highlight-box">
+          <h4>🎯 Points clés</h4>
+          <ul>
+            <li>Application desktop performante avec JavaFX</li>
+            <li>Architecture MVC avec Spring Boot</li>
+            <li>Base de données MySQL avec JPA/Hibernate</li>
+            <li>Interface intuitive avec FXML</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="projet-section" id="fonctionnalites">
+        <h2>Fonctionnalités principales</h2>
+
+        <h3>Gestion des chantiers</h3>
+        <ul>
+          <li>Création et modification de chantiers</li>
+          <li>Affectation de ressources et matériaux</li>
+          <li>Suivi de l'avancement en temps réel</li>
+          <li>Gestion des équipes et plannings</li>
+        </ul>
+
+        <h3>Création de devis</h3>
+        <ul>
+          <li>Saisie des informations client</li>
+          <li>Ajout de prestations et matériaux</li>
+          <li>Calcul automatique (HT, TVA, TTC)</li>
+          <li>Génération de PDF et envoi par email</li>
+        </ul>
+
+        <h3>Architecture & Modélisation</h3>
+        <ul>
+          <li>Diagrammes UML (classes, séquences)</li>
+          <li>Modélisation complète de la base de données</li>
+          <li>Pattern MVC respecté</li>
+        </ul>
+      </section>
+
+      <section class="projet-section" id="technologies">
+        <h2>Technologies utilisées</h2>
+        <div class="tech-list">
+          <span class="tech-item">JavaFX 17</span>
+          <span class="tech-item">Spring Boot</span>
+          <span class="tech-item">MySQL</span>
+          <span class="tech-item">FXML</span>
+          <span class="tech-item">JPA/Hibernate</span>
+          <span class="tech-item">Maven</span>
+        </div>
+      </section>
+
+      <section class="projet-section" id="captures">
+        <h2>Captures d'écran</h2>
+        <p style="margin-bottom: 30px;">Ajoutez ici vos captures d'écran de l'application JavaFX.</p>
+
+        <div class="image-placeholder">
+          <h4>🖥️ Captures d'écran à ajouter</h4>
+          <p>Placez vos images dans <code>assets/images/</code> puis remplacez cette section par :</p>
+          <p style="margin-top: 15px;"><code>&lt;img src="assets/images/java-capture.png" alt="Capture" style="width:100%; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"&gt;</code></p>
+        </div>
+      </section>
+
+      <!-- Actions finales -->
+      <div class="projet-actions">
+        <a href="projet-gesttravaux.html" class="projet-btn projet-btn--secondary">
+          ← Retour au projet
+        </a>
+        <a href="projet-gesttravaux-php.html" class="projet-btn">
+          Voir la version PHP →
+        </a>
+        <a href="index.html#experience" class="projet-btn projet-btn--secondary">
+          Retour au portfolio
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

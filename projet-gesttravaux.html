@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Projet GestTravaux Pro – Elsa Dadoun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .projet-container {
+      max-width: 900px;
+      margin: 100px auto 60px;
+      padding: 0 40px;
+      line-height: 1.7;
+    }
+
+    .projet-header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 40px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-darker));
+      color: white;
+      border-radius: 16px;
+    }
+
+    .projet-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--pink-main);
+    }
+
+    .projet-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+      font-size: 0.95rem;
+    }
+
+    .projet-info-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .projet-info-item strong {
+      color: var(--pink-main);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .projet-nav {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .projet-nav h3 {
+      margin: 0 0 15px 0;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+    }
+
+    .projet-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .projet-nav li a {
+      display: block;
+      padding: 8px 16px;
+      background: var(--cream);
+      color: var(--text-main);
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .projet-nav li a:hover {
+      background: var(--pink-main);
+      color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .projet-section {
+      margin-bottom: 60px;
+      scroll-margin-top: 100px;
+    }
+
+    .projet-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--green-dark);
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid var(--pink-main);
+    }
+
+    .projet-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--green-darker);
+      margin: 30px 0 20px;
+    }
+
+    .projet-section h4 {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin: 25px 0 15px;
+      font-weight: 600;
+    }
+
+    .projet-section p {
+      margin-bottom: 15px;
+      color: var(--text-main);
+    }
+
+    .projet-section ul, .projet-section ol {
+      margin: 15px 0 15px 25px;
+      color: var(--text-main);
+    }
+
+    .projet-section li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fff4d4;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid var(--pink-main);
+      margin: 25px 0;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .tech-item {
+      padding: 8px 16px;
+      background: var(--green-dark);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .projet-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .projet-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--green-dark);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .projet-btn:hover {
+      background: var(--green-darker);
+      transform: translateY(-2px);
+    }
+
+    .projet-btn--secondary {
+      background: white;
+      color: var(--green-dark);
+      border: 2px solid var(--green-dark);
+    }
+
+    .projet-btn--secondary:hover {
+      background: var(--cream);
+    }
+
+    .in-progress {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff4d4;
+      border-radius: 16px;
+      margin: 40px 0;
+    }
+
+    .in-progress h3 {
+      font-size: 1.8rem;
+      color: var(--green-dark);
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .projet-container {
+        padding: 0 20px;
+        margin-top: 80px;
+      }
+
+      .projet-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .projet-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .projet-nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAV -->
+  <header class="topbar">
+    <div class="topbar__logo"><a href="index.html" style="color: inherit; text-decoration: none;">Elsa Dadoun</a></div>
+    <nav class="topbar__nav">
+      <a href="index.html#about">À propos</a>
+      <a href="index.html#experience">Expérience</a>
+      <a href="index.html#skills">Compétences</a>
+      <a href="index.html#education">Formation</a>
+      <a href="index.html#contact" class="btn-pill btn-pill--small">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="projet-container">
+      
+      <!-- En-tête du projet -->
+      <div class="projet-header">
+        <h1>Projet Annuel – GestTravaux Pro</h1>
+        <p style="font-size: 1.2rem; margin: 10px 0;">BTS SIO – Projet de développement</p>
+        
+        <div class="projet-info">
+          <div class="projet-info-item">
+            <strong>Période</strong>
+            2024 – 2025
+          </div>
+          <div class="projet-info-item">
+            <strong>Statut</strong>
+            Projet en cours
+          </div>
+          <div class="projet-info-item">
+            <strong>Type</strong>
+            Application de gestion
+          </div>
+          <div class="projet-info-item">
+            <strong>Technologies</strong>
+            JavaFX, Spring Boot, Symfony
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="projet-actions">
+        <a href="index.html#experience" class="projet-btn projet-btn--secondary">
+          ← Retour au portfolio
+        </a>
+      </div>
+
+      <!-- Présentation générale -->
+      <section class="projet-section" id="presentation">
+        <h2>Présentation du projet</h2>
+        <p><strong>GestTravaux Pro</strong> est une application de gestion destinée aux entreprises du bâtiment, permettant la gestion complète des chantiers et la création de devis professionnels.</p>
+        
+        <div class="highlight-box">
+          <p><strong>🎯 Objectif :</strong> Développer une solution complète de gestion pour les entreprises du BTP</p>
+          <p><strong>📋 Fonctionnalités principales :</strong></p>
+          <ul>
+            <li>Architecture et base de données (modélisation UML)</li>
+            <li>Gestion des chantiers et création de devis</li>
+            <li>Interface utilisateur intuitive</li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 30px;">Ce projet a été développé en <strong>deux versions distinctes</strong>, chacune avec ses propres technologies et approches :</p>
+      </section>
+
+      <!-- Deux versions du projet -->
+      <section class="projet-section" id="versions">
+        <h2>Les deux versions du projet</h2>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px;">
+          
+          <!-- Version Java -->
+          <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #007396, #003d52); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+              ☕
+            </div>
+            <h3 style="color: #007396; margin-bottom: 15px;">Version Java</h3>
+            <p style="margin-bottom: 20px;">Application desktop avec JavaFX offrant une interface riche et performante pour la gestion des chantiers.</p>
+            
+            <div class="tech-list" style="justify-content: center; margin-bottom: 25px;">
+              <span class="tech-item" style="background: #007396;">JavaFX</span>
+              <span class="tech-item" style="background: #007396;">Spring Boot</span>
+              <span class="tech-item" style="background: #007396;">MySQL</span>
+            </div>
+            
+            <a href="projet-gesttravaux-java.html" class="projet-btn" style="background: #007396;">
+              Voir la version Java →
+            </a>
+          </div>
+
+          <!-- Version PHP -->
+          <div style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #8892BF, #4F5B93); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
+              🐘
+            </div>
+            <h3 style="color: #8892BF; margin-bottom: 15px;">Version PHP</h3>
+            <p style="margin-bottom: 20px;">Application web avec Symfony proposant une interface accessible depuis n'importe quel navigateur.</p>
+            
+            <div class="tech-list" style="justify-content: center; margin-bottom: 25px;">
+              <span class="tech-item" style="background: #8892BF;">PHP</span>
+              <span class="tech-item" style="background: #8892BF;">Symfony</span>
+              <span class="tech-item" style="background: #8892BF;">MySQL</span>
+            </div>
+            
+            <a href="projet-gesttravaux-php.html" class="projet-btn" style="background: #8892BF;">
+              Voir la version PHP →
+            </a>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 40px; padding: 25px; background: #f8f9fa; border-radius: 12px; border-left: 5px solid var(--green-dark);">
+          <h4 style="margin-top: 0;">💡 Pourquoi deux versions ?</h4>
+          <p>Ce projet a été développé en deux versions pour explorer différentes technologies et architectures :</p>
+          <ul>
+            <li><strong>Version Java :</strong> Focus sur les applications desktop avec une interface JavaFX moderne</li>
+            <li><strong>Version PHP :</strong> Approche web avec le framework Symfony pour une accessibilité maximale</li>
+          </ul>
+          <p style="margin-bottom: 0;">Chaque version partage la même base de données et les mêmes concepts métier, mais avec des implémentations spécifiques.</p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

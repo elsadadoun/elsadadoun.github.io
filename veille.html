@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Veille Technologique – Elsa Dadoun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .veille-hero {
+      background: var(--cream);
+      color: var(--text-main);
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+    .veille-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin: 0 0 20px;
+      font-weight: 700;
+    }
+    .veille-hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+    .veille-content {
+      max-width: 900px;
+      margin: -40px auto 60px;
+      padding: 0 20px;
+    }
+    .main-card {
+      background: white;
+      border-radius: 20px;
+      padding: 50px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+    .topic-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #e3ed8f 0%, #cddb85 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+    .main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #1a1a2e;
+      margin: 0 0 30px;
+      line-height: 1.3;
+    }
+    .content-section {
+      margin: 35px 0;
+    }
+    .content-section h3 {
+      color: #0f3460;
+      font-size: 1.3rem;
+      margin: 0 0 15px;
+      font-weight: 600;
+    }
+    .content-section p, .content-section ul {
+      line-height: 1.8;
+      color: #555;
+      font-size: 1.05rem;
+    }
+    .content-section ul {
+      padding-left: 25px;
+    }
+    .content-section li {
+      margin: 10px 0;
+    }
+    .highlight-box {
+      background: #fff5f5;
+      border-left: 4px solid #e94560;
+      padding: 20px 25px;
+      margin: 25px 0;
+      border-radius: 8px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 35px;
+      padding-top: 35px;
+      border-top: 2px solid #f0f0f0;
+    }
+    .tag {
+      background: #f5f5f5;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #1a1a2e;
+      transition: all 0.3s;
+    }
+    .tag:hover {
+      background: #0f3460;
+      color: white;
+    }
+    .sources {
+      background: #f8f9fa;
+      padding: 40px;
+      border-radius: 15px;
+      margin-top: 40px;
+    }
+    .sources h3 {
+      margin-top: 0;
+      color: #1a1a2e;
+      font-size: 1.3rem;
+    }
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .source-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 768px) {
+      .veille-hero h1 { font-size: 2rem; }
+      .main-card { padding: 30px 25px; }
+      .main-title { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__logo">Elsa Dadoun</div>
+  <nav class="topbar__nav">
+    <a href="index.html">Accueil</a>
+    <a href="index.html#experience">Expérience</a>
+    <a href="index.html#skills">Compétences</a>
+    <a href="index.html#education">Formation</a>
+    <a href="veille.html" style="color: #f4f4f3; font-weight: 600;">Veille</a>
+    <a href="index.html#contact" class="btn-pill btn-pill--small">Contact</a>
+  </nav>
+</header>
+
+<div class="veille-hero">
+  <h1>Veille Technologique</h1>
+  <p>Power Apps & Power Automate</p>
+</div>
+
+<div class="veille-content">
+  <div class="main-card">
+    <span class="topic-badge"> Low-Code / No-Code</span>
+    
+  <h2 class="main-title">Power Apps & Power Automate : Des outils simples pour créer sans coder</h2>
+
+    <div class="content-section">
+      <h3> C'est quoi ?</h3>
+      <p>
+        Power Apps et Power Automate sont des outils Microsoft qui permettent de créer des applications 
+        et d'automatiser des tâches sans coder.
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <strong> Pourquoi c'est intéressant ? </strong> Ces outils permettent de créer des solutions rapidement 
+      pour des besoins simples en entreprise, sans avoir besoin d'une équipe de développeurs pendant des semaines.
+    </div>  
+
+    <div class="content-section">
+      <h3> Les Outils Microsoft</h3>
+      <div class="highlight-box" style="background: #f0f7ff; border-left-color: #0f3460;">
+        <strong> Power Apps</strong><br>
+        Un outil pour créer des applications simples sans coder. Comme créer un formulaire intelligent 
+        qui enregistre des données dans Excel ou une base de données.
+        <br><br>
+        <strong>Exemple simple :</strong> Une application pour que les employés signalent un problème informatique. 
+        Ils remplissent un formulaire → les données vont dans Excel → un email est envoyé au support.
+        <br><br>
+        <strong> Power Automate</strong><br>
+        Un outil pour automatiser des tâches répétitives. Comme un robot qui fait toujours la même chose automatiquement.
+        <br><br>
+        <strong>Exemple simple :</strong> Quand un fichier arrive dans un dossier → il est automatiquement copié 
+        dans SharePoint → et un message est envoyé sur Teams pour prévenir l'équipe.
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h3> Mon Expérience en Stage</h3>
+      <div class="highlight-box" style="background: #fff5f5; border-left-color: #e94560;">
+        <strong> Chez Scor (2025)</strong><br><br>
+        J'ai utilisé ces outils pour aider l'entreprise à automatiser certaines tâches :
+        <br><br>
+        <strong> Ce que j'ai fait :</strong>
+        <ul style="margin: 15px 0 10px 20px;">
+          <li>Créer des notifications automatiques quand des documents arrivent</li>
+          <li>Faire des formulaires pour saisir des données plus facilement</li>
+          <li>Connecter les outils entre eux (SharePoint, Excel, emails)</li>
+        </ul>
+        <strong> Ce que j'ai appris :</strong><br><br>Ces outils sont rapides et pratiques pour des choses simples, 
+        mais pour des projets plus complexes, il vaut mieux utiliser du vrai code.
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h3> Ce Qu'on Peut Faire avec ces Outils</h3>
+      <p><strong>Exemples concrets :</strong></p>
+      <ul>
+        <li> Créer une application pour signaler des pannes (Power Apps)</li>
+        <li> Envoyer automatiquement des emails quand quelque chose se passe (Power Automate)</li>
+        <li> Faire un formulaire qui range les données dans Excel automatiquement</li>
+        <li> Recevoir une notification Teams quand un fichier est ajouté</li>
+        <li> Valider des demandes automatiquement selon des règles</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h3> Points Positifs et Négatifs</h3>
+      <p><strong> Les avantages :</strong></p>
+      <ul>
+        <li>Très rapide à créer(quelques heures au lieu de plusieurs jours)</li>
+        <li>Pas besoin d'être expert en programmation</li>
+        <li>Parfait pour des besoins simples en entreprise</li>
+        <li>Facile à modifier après</li>
+      </ul>
+      <p style="margin-top: 20px;"><strong> Les limites :</strong></p>
+      <ul>
+        <li>Difficile de faire des choses complexes ou spécifiques</li>
+        <li>On dépend de Microsoft </li>
+        <li>Moins performant que du code fait sur mesure</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h3> Pour les Développeurs</h3>
+      <p><strong>Ces outils changent certaines choses :</strong></p>
+      <ul>
+        <li>Des tâches simples peuvent être faites par des non-développeurs</li>
+        <li>Les développeurs peuvent se concentrer sur des projets plus intéressants</li>
+        <li>C'est bien de connaître ces outils en plus du code classique</li>
+      </ul>
+      <p style="margin-top: 20px;"><strong>Mais le code reste important pour :</strong></p>
+      <ul>
+        <li>Les projets complexes et spécifiques</li>
+        <li>Quand on a besoin de performance</li>
+        <li>Pour la sécurité avancée</li>
+        <li>Les innovations et les solutions sur mesure</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <strong> Ce que je pense :</strong><br><br>
+      Power Apps et Power Automate sont des outils pratiques pour aller vite sur des choses simples. 
+      En stage, j'ai vu qu'on peut créer des solutions utiles en quelques heures.
+      <br><br>
+      Mais dès qu'on veut faire quelque chose de plus personnalisé ou complexe, on a besoin de 
+      vraie programmation (Python, JavaScript, etc.).
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>© 2026 – Portfolio d'Elsa Dadoun</span>
+</footer>
+
+</body>
+</html>
