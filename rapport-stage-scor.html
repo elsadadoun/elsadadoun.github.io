@@ -210,6 +210,58 @@
       margin-bottom: 15px;
     }
 
+    .rapport-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 25px 0;
+      display: block;
+    }
+
+    .rapport-image-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .rapport-image-caption {
+      font-style: italic;
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    .rapport-image.small {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .rapport-images-double {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .rapport-images-double .rapport-image-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rapport-images-double .rapport-image {
+      margin: 0;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 720px) {
+      .rapport-images-double {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
       .rapport-container {
         padding: 0 20px;
@@ -283,23 +335,21 @@
 
       <!-- Navigation sommaire (structure pour plus tard) -->
       <nav class="rapport-nav">
-        <h3>📑 Sommaire ire (à compléter)</h3>
+        <h3>📑 Sommaire </h3>
         <ul>
           <li><a href="#remerciements">Remerciements</a></li>
           <li><a href="#presentation">Présentation</a></li>
           <li><a href="#swot">Analyse SWOT</a></li>
           <li><a href="#contexte">Contexte</a></li>
           <li><a href="#missions">Missions</a></li>
-          <li><a href="#environnement">Environnement technique</a></li>
-          <li><a href="#apports">Apports du stage</a></li>
-          <li><a href="#bilan">Bilan</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
         </ul>
       </nav>
 
       <!-- Sections vides à compléter -->
       <section class="rapport-section" id="remerciements">
         <h2>1. Remerciements</h2>
-        <p><em>À compléter après le stage...</em></p>
+        <p>Je tiens à remercier l'équipe informatique de SCOR pour leur accueil chaleureux et leur accompagnement tout au long de ce stage, qui m'a permis de découvrir les réalités du support technique en entreprise et de développer des compétences essentielles pour ma formation en BTS SIO.</p>
       </section>
 
       <section class="rapport-section" id="presentation">
@@ -319,6 +369,21 @@
             <strong>👥 Effectifs :</strong> Plus de 3 000 collaborateurs<br>
             <strong>💼 Secteur :</strong> Assurance et réassurance internationale
           </p>
+        </div>
+
+        <div class="rapport-image-container">
+          <img src="assets/images/scor/scor_dans_le_monde.jpg" alt="SCOR dans le monde" class="rapport-image">
+          <p class="rapport-image-caption">Présence mondiale de SCOR</p>
+        </div>
+
+        <div class="rapport-image-container">
+          <img src="assets/images/scor/scor_chiffres.jpg" alt="Chiffres clés SCOR" class="rapport-image">
+          <p class="rapport-image-caption">Chiffres clés de SCOR</p>
+        </div>
+
+        <div class="rapport-image-container">
+          <img src="assets/images/scor/scor_chiffres_1.jpg" alt="Performance SCOR" class="rapport-image">
+          <p class="rapport-image-caption">Performance et indicateurs SCOR</p>
         </div>
       </section>
 
@@ -478,6 +543,11 @@
           Dans certains cas, il faut une prise de rendez-vous / planification pour remplacement ou traitement, demandes complémentaires.
         </p>
 
+        <div class="rapport-image-container">
+          <img src="assets/images/scor/liste_taches_prise_rdv.png" alt="Liste des tâches et prise de rendez-vous" class="rapport-image">
+          <p class="rapport-image-caption">Suivi des tâches et planification des interventions</p>
+        </div>
+
         <p><strong>Identification du poste :</strong></p>
         <p>
           Pour chaque laptop préparé, je relevais les informations utiles : le nom du PC / hostname, l'utilisateur concerné, 
@@ -496,6 +566,18 @@
         <p>
           L'objectif est que l'équipe support puisse savoir où est le matériel et dans quel état il se trouve, sans perdre de temps.
         </p>
+
+        <div class="rapport-images-double">
+          <div class="rapport-image-container">
+            <img src="assets/images/scor/masterisation.jpg" alt="Processus de masterisation" class="rapport-image">
+            <p class="rapport-image-caption">Processus de masterisation des laptops SCOR</p>
+          </div>
+
+          <div class="rapport-image-container">
+            <img src="assets/images/scor/masterisation_2.jpg" alt="Configuration système" class="rapport-image">
+            <p class="rapport-image-caption">Configuration et déploiement des masters</p>
+          </div>
+        </div>
 
         <div class="highlight-box">
           <h4 style="margin-top: 0;">🌍 Réalisation de masters pour bureaux internationaux</h4>
@@ -556,6 +638,11 @@
         </ul>
         <p><strong>Volume :</strong> Configuration effectuée sur une série de clés (environ 300).</p>
 
+        <div class="rapport-image-container">
+          <img src="assets/images/scor/yubikey.jpg" alt="Clés YubiKey" class="rapport-image small">
+          <p class="rapport-image-caption">Clés YubiKey pour l'authentification multifactorielle</p>
+        </div>
+
         <!-- Mini-projet -->
         <h3 style="margin-top: 50px;">Mini-projet : Développement d'une macro Excel (VBA)</h3>
         
@@ -579,53 +666,16 @@
           chaque catégorie. Les résultats sont ensuite affichés dans une fenêtre récapitulative et peuvent être exportés dans une 
           feuille dédiée pour faciliter le contrôle qualité et le reporting de l'équipe.
         </p>
-      </section>
 
-      <section class="rapport-section" id="environnement">
-        <h2>5. Environnement technique</h2>
-        
-        <h4>Systèmes d'exploitation</h4>
-        <div class="tech-list">
-          <span class="tech-item">Windows 11</span>
-          <span class="tech-item">Windows 10</span>
-        </div>
-
-        <h4>Outils et logiciels</h4>
-        <div class="tech-list">
-          <span class="tech-item">ServiceNow</span>
-          <span class="tech-item">Lenovo System Update</span>
-          <span class="tech-item">Boot Menu / BIOS</span>
-          <span class="tech-item">Outils de masterisation SCOR</span>
-        </div>
-
-        <h4>Sécurité</h4>
-        <div class="tech-list">
-          <span class="tech-item">YubiKey (Yubico)</span>
-          <span class="tech-item">MFA / 2FA</span>
-          <span class="tech-item">U2F Protocol</span>
-        </div>
-
-        <h4>Développement</h4>
-        <div class="tech-list">
-          <span class="tech-item">Excel VBA</span>
-          <span class="tech-item">Macros</span>
-        </div>
-
-        <h4>Matériel</h4>
-        <div class="tech-list">
-          <span class="tech-item">Lenovo ThinkPad</span>
-          <span class="tech-item">YubiKey (dispositifs physiques)</span>
+        <div class="rapport-image-container">
+          <img src="assets/images/scor/tableau_excel.png" alt="Macro Excel VBA" class="rapport-image">
+          <p class="rapport-image-caption">Interface de la macro Excel pour le suivi des tickets</p>
         </div>
       </section>
 
-      <section class="rapport-section" id="apports">
-        <h2>6. Apports du stage</h2>
-        <p><em>À compléter : compétences acquises, apprentissages...</em></p>
-      </section>
-
-      <section class="rapport-section" id="bilan">
-        <h2>7. Bilan et perspectives</h2>
-        <p><em>À compléter : bilan personnel, perspectives...</em></p>
+      <section class="rapport-section" id="conclusion">
+        <h2>5. Conclusion</h2>
+        <p>Ce stage chez SCOR m'a permis de découvrir concrètement les métiers du support informatique en entreprise et de mettre en pratique mes connaissances en BTS SIO, notamment à travers la gestion du parc informatique, la sécurisation des systèmes et l'automatisation de tâches, des compétences essentielles pour ma future carrière professionnelle.</p>
       </section>
 
     </div>
