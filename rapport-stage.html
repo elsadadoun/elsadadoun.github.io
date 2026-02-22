@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Rapport de Stage – Elsa Dadoun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .rapport-container {
+      max-width: 900px;
+      margin: 100px auto 60px;
+      padding: 0 40px;
+      line-height: 1.7;
+    }
+
+    .rapport-header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 40px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-darker));
+      color: white;
+      border-radius: 16px;
+    }
+
+    .rapport-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--pink-main);
+    }
+
+    .rapport-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+      font-size: 0.95rem;
+    }
+
+    .rapport-info-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .rapport-info-item strong {
+      color: var(--pink-main);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .rapport-nav {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .rapport-nav h3 {
+      margin: 0 0 15px 0;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+    }
+
+    .rapport-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .rapport-nav li a {
+      display: block;
+      padding: 8px 16px;
+      background: var(--cream);
+      color: var(--text-main);
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .rapport-nav li a:hover {
+      background: var(--pink-main);
+      color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .rapport-section {
+      margin-bottom: 60px;
+      scroll-margin-top: 100px;
+    }
+
+    .rapport-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--green-dark);
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid var(--pink-main);
+    }
+
+    .rapport-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--green-darker);
+      margin: 30px 0 20px;
+    }
+
+    .rapport-section h4 {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin: 25px 0 15px;
+      font-weight: 600;
+    }
+
+    .rapport-section p {
+      margin-bottom: 15px;
+      color: var(--text-main);
+    }
+
+    .rapport-section ul, .rapport-section ol {
+      margin: 15px 0 15px 25px;
+      color: var(--text-main);
+    }
+
+    .rapport-section li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fff4d4;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid var(--pink-main);
+      margin: 25px 0;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .tech-item {
+      padding: 8px 16px;
+      background: var(--green-dark);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .image-container {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      margin: 15px auto;
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      font-style: italic;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .rapport-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .rapport-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--green-dark);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .rapport-btn:hover {
+      background: var(--green-darker);
+      transform: translateY(-2px);
+    }
+
+    .rapport-btn--secondary {
+      background: white;
+      color: var(--green-dark);
+      border: 2px solid var(--green-dark);
+    }
+
+    .rapport-btn--secondary:hover {
+      background: var(--cream);
+    }
+
+    .rapport-btn--small {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .rapport-container {
+        padding: 0 20px;
+        margin-top: 80px;
+      }
+
+      .rapport-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .rapport-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .rapport-nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAV -->
+  <header class="topbar">
+    <div class="topbar__logo"><a href="index.html" style="color: inherit; text-decoration: none;">Elsa Dadoun</a></div>
+    <nav class="topbar__nav">
+      <a href="index.html#about">À propos</a>
+      <a href="index.html#experience">Expérience</a>
+      <a href="index.html#skills">Compétences</a>
+      <a href="index.html#education">Formation</a>
+      <a href="index.html#contact" class="btn-pill btn-pill--small">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="rapport-container">
+      
+      <!-- En-tête du rapport -->
+      <div class="rapport-header">
+        <h1>Rapport de Stage</h1>
+        <p style="font-size: 1.2rem; margin: 10px 0;">BTS SIO 1<sup>ère</sup> année</p>
+        
+        <div class="rapport-info">
+          <div class="rapport-info-item">
+            <strong>Période</strong>
+            19/05/2025 – 02/07/2025
+          </div>
+          <div class="rapport-info-item">
+            <strong>Organisme</strong>
+            Phenixel
+          </div>
+          <div class="rapport-info-item">
+            <strong>Enseignant référent</strong>
+            Jacques BUFFETEAU
+          </div>
+          <div class="rapport-info-item">
+            <strong>Tuteur de stage</strong>
+            Cardoso Yonathan
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="rapport-actions">
+        <a href="documents/rapport-stage-phenixel.pdf" download class="rapport-btn rapport-btn--small">
+          📥 Télécharger le PDF
+        </a>
+        <a href="index.html#experience" class="rapport-btn rapport-btn--secondary">
+          ← Retour au portfolio
+        </a>
+      </div>
+
+      <!-- Navigation sommaire -->
+      <nav class="rapport-nav">
+        <h3>📑 Sommaire</h3>
+        <ul>
+          <li><a href="#remerciements">Remerciements</a></li>
+          <li><a href="#presentation">Présentation</a></li>
+          <li><a href="#swot">Analyse SWOT</a></li>
+          <li><a href="#contexte">Contexte</a></li>
+          <li><a href="#missions">Missions</a></li>
+          <li><a href="#environnement">Environnement technique</a></li>
+          <li><a href="#apports">Apports du stage</a></li>
+          <li><a href="#bilan">Bilan</a></li>
+        </ul>
+      </nav>
+
+      <!-- Section 1 : Remerciements -->
+      <section class="rapport-section" id="remerciements">
+        <h2>1. Remerciements</h2>
+        <p>
+          Je tiens à remercier chaleureusement Phenixel et mon tuteur de stage, Yonathan Cardoso, 
+          pour m'avoir accueillie et accompagnée tout au long de ces six semaines. 
+          Cette expérience m'a permis de découvrir le monde professionnel du développement web 
+          et d'approfondir mes compétences techniques.
+        </p>
+        <p>
+          Je remercie également mon enseignant référent, Jacques BUFFETEAU, pour son suivi 
+          et ses conseils précieux, ainsi que l'ensemble de l'équipe pédagogique de mon établissement 
+          pour la qualité de la formation dispensée.
+        </p>
+      </section>
+
+      <!-- Section 2 : Présentation -->
+      <section class="rapport-section" id="presentation">
+        <h2>2. Présentation de l'organisme d'accueil</h2>
+        <div class="highlight-box">
+          <p>
+            <strong>Phenixel</strong> est une structure indépendante de développement informatique, 
+            spécialisée dans :
+          </p>
+          <ul>
+            <li>La création de solutions web et mobiles</li>
+            <li>L'intégration d'APIs (Notion, Discord)</li>
+            <li>La mise en place de plateformes collaboratives</li>
+          </ul>
+          <p style="margin-top: 20px;">
+            <strong>📍 Adresse :</strong> 7 Boulevard Henri Poincaré, Sarcelles<br>
+            <strong>📞 Contact :</strong> 06 01 01 68 48<br>
+            <strong>✉️ Email :</strong> contact.phenixel@gmail.com
+          </p>
+        </div>
+      </section>
+
+      <!-- Section SWOT : Analyse de Phenixel -->
+      <section class="rapport-section" id="swot">
+        <h2>2bis. Analyse SWOT de Phenixel</h2>
+        <p style="margin-bottom:30px;">
+          Analyse stratégique de l'organisme d'accueil.
+        </p>
+        
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:30px;">
+          <!-- Forces -->
+          <div style="background:#d4edda;padding:25px;border-radius:12px;border-left:4px solid #28a745;">
+            <h4 style="color:#155724;margin:0 0 15px 0;font-size:1.1rem;">💪 Forces</h4>
+            <ul style="margin:0;padding-left:20px;line-height:1.8;">
+              <li>Structure agile et flexible</li>
+              <li>Expertise en développement web</li>
+              <li>Technologies modernes (Django, APIs)</li>
+              <li>Bon accompagnement des stagiaires</li>
+            </ul>
+          </div>
+
+          <!-- Faiblesses -->
+          <div style="background:#f8d7da;padding:25px;border-radius:12px;border-left:4px solid #dc3545;">
+            <h4 style="color:#721c24;margin:0 0 15px 0;font-size:1.1rem;">⚠️ Faiblesses</h4>
+            <ul style="margin:0;padding-left:20px;line-height:1.8;">
+              <li>Petite structure avec peu de ressources</li>
+              <li>Visibilité à développer</li>
+              <li>Dépendance aux projets clients</li>
+            </ul>
+          </div>
+
+          <!-- Opportunités -->
+          <div style="background:#d1ecf1;padding:25px;border-radius:12px;border-left:4px solid #17a2b8;">
+            <h4 style="color:#0c5460;margin:0 0 15px 0;font-size:1.1rem;">🚀 Opportunités</h4>
+            <ul style="margin:0;padding-left:20px;line-height:1.8;">
+              <li>Croissance du marché des applications web</li>
+              <li>Digitalisation des entreprises</li>
+              <li>Partenariats possibles avec des écoles</li>
+            </ul>
+          </div>
+
+          <!-- Menaces -->
+          <div style="background:#fff3cd;padding:25px;border-radius:12px;border-left:4px solid #ffc107;">
+            <h4 style="color:#856404;margin:0 0 15px 0;font-size:1.1rem;">⚡ Menaces</h4>
+            <ul style="margin:0;padding-left:20px;line-height:1.8;">
+              <li>Forte concurrence sur le marché</li>
+              <li>Évolution rapide des technologies</li>
+              <li>Difficulté à recruter des talents</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3 : Contexte -->
+      <section class="rapport-section" id="contexte">
+        <h2>3. Contexte et objectifs du stage</h2>
+        <p>
+          Ce stage de six semaines s'inscrit dans ma formation <strong>BTS SIO 
+          (Services Informatiques aux Organisations), option SLAM</strong>.
+        </p>
+        <p>
+          Il avait pour but de me familiariser avec un environnement de développement professionnel, 
+          d'approfondir mes compétences en <strong>Python et Django</strong>, et de travailler sur 
+          un projet concret intégrant bases de données, interfaces web et APIs externes.
+        </p>
+        <p>
+          J'ai ainsi eu l'opportunité de contribuer à une application réelle appelée 
+          <strong>La Petite Jérusalem</strong>, en développant de nouvelles fonctionnalités 
+          et en améliorant l'ergonomie générale.
+        </p>
+        
+        <div class="highlight-box" style="margin-top: 30px;">
+          <h4>Objectifs principaux :</h4>
+          <ul>
+            <li>Découvrir un environnement professionnel agile</li>
+            <li>Mettre en pratique mes connaissances en Python et Django</li>
+            <li>Apprendre à travailler avec des APIs externes et des bases de données</li>
+            <li>Développer mon autonomie et ma rigueur technique</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 4 : Missions -->
+      <section class="rapport-section" id="missions">
+        <h2>4. Missions réalisées</h2>
+        
+        <h3>Présentation de l'application</h3>
+        <p>
+          <strong>La Petite Jérusalem</strong> est une plateforme d'étude en ligne de textes juifs 
+          (Guemara, Michna, Tehilim, etc.). Elle propose deux grands modules :
+        </p>
+        <ul>
+          <li>
+            <strong>GemaraChain</strong> : permet de créer ou rejoindre une session d'étude, 
+            où chaque utilisateur choisit une Gemara. Une fois choisie, elle devient indisponible 
+            pour les autres.
+          </li>
+          <li>
+            <strong>Catalogue</strong> : regroupe les catégories, les rabbanim (enseignants) 
+            et les cours, et facilite la navigation à travers l'ensemble des contenus.
+          </li>
+        </ul>
+        <p>
+          Mon stage s'est concentré sur l'amélioration de l'interface et le développement 
+          du catalogue de cours.
+        </p>
+
+        <!-- Mission 1 -->
+        <h3>Mission 1 – Création d'une landing page</h3>
+        <p>
+          Au début du projet, l'application s'ouvrait directement sur le module GemaraChain. 
+          Il manquait donc une <strong>page d'accueil générale</strong> permettant de présenter 
+          la plateforme et de guider les utilisateurs vers les différentes fonctionnalités.
+        </p>
+        <p>
+          J'ai développé une <strong>nouvelle landing page</strong> distincte, en conservant 
+          la barre de navigation et le pied de page existants pour garder une cohérence visuelle. 
+          Cette page met en avant l'identité du projet et oriente l'utilisateur vers GemaraChain 
+          ou d'autres sections de la plateforme.
+        </p>
+        <p>
+          Grâce à ce travail, l'application dispose désormais d'une <strong>entrée principale 
+          claire et accueillante</strong>, renforçant son ergonomie et son aspect professionnel.
+        </p>
+
+        <div class="image-container">
+          <img src="assets/images/mission1-1.png" alt="Page d'accueil La Petite Jérusalem" style="max-width: 700px;">
+          <p class="image-caption">Page d'accueil de La Petite Jérusalem</p>
+        </div>
+
+        <div class="image-container">
+          <img src="assets/images/mission1-2.png" alt="Module GemaraChain" style="max-width: 700px;">
+          <p class="image-caption"> Accès au module GemaraChain depuis la landing page </p>
+        </div>
+
+        <!-- Mission 2 -->
+        <h3>Mission 2 – Développement du module Catalogue de cours</h3>
+        <p>
+          <strong>Description :</strong> Amélioration et enrichissement d'une plateforme Django 
+          (templates, vues basées sur classes, modèles).
+        </p>
+        <p>Concrètement, j'ai travaillé sur : </p>
+        <ul>
+          <li>
+            L'affichage d'une <strong>liste de catégories</strong>, chacune regroupant 
+            plusieurs rabbanim
+          </li>
+          <li>
+            La possibilité, pour chaque rabbin, de <strong>consulter la liste de ses cours</strong> 
+            et de naviguer facilement entre catégories, enseignants et contenus
+          </li>
+          <li>
+            La mise en place d'un <strong>formulaire d'ajout de cours</strong>, permettant 
+            d'indiquer un titre, de joindre un fichier audio et d'ajouter des tags
+          </li>
+          <li>
+            L'ajout d'un <strong>système de filtrage</strong>, afin de retrouver rapidement 
+            un cours
+          </li>
+        </ul>
+     
+        <div class="highlight-box">
+          <h4>Compétences acquises :</h4>
+          <ul>
+            <li>Architecture MVT (Modèle-Vue-Template) de Django</li>
+            <li>Conception de formulaires et gestion de fichiers médias</li>
+            <li>Travail avec Git (branches, stash, migration, gestion de conflits)</li>
+            <li>Optimisation de la navigation et de l'expérience utilisateur</li>
+          </ul>
+        </div>
+
+        <p>
+          Cette évolution rend la plateforme beaucoup plus complète et adaptée aux besoins 
+          des utilisateurs : les enseignants peuvent enrichir facilement la base de contenus, 
+          et les étudiants accèdent à une navigation fluide entre les catégories et les cours.
+        </p>
+      </section>
+
+      <!-- Section 5 : Environnement technique -->
+      <section class="rapport-section" id="environnement">
+        <h2>5. Environnement technique</h2>
+        
+    
+        <h4>Langages :</h4>
+        <div class="tech-list">
+          <span class="tech-item">Python</span>
+          <span class="tech-item">JavaScript</span>
+          <span class="tech-item">HTML</span>
+          <span class="tech-item">CSS</span>
+        </div>
+
+    
+
+        <h4>Base de données :</h4>
+        <div class="tech-list">
+          <span class="tech-item">SQLite </span>
+        </div>
+
+        <h4>Outils :</h4>
+        <div class="tech-list">
+          <span class="tech-item">Git</span>
+          <span class="tech-item">GitHub</span>
+        </div>
+      </section>
+
+      <!-- Section 6 : Apports -->
+      <section class="rapport-section" id="apports">
+        <h2>6. Apports du stage</h2>
+        
+        <h3>Sur le plan technique</h3>
+        <ul>
+          <li>
+            Découverte du framework <strong>Django</strong>, qui m'a permis de comprendre 
+            l'architecture complète d'une application web
+          </li>
+          <li>
+            Approfondissement de mes connaissances en <strong>Python</strong>, 
+            en travaillant sur des cas concrets
+          </li>
+          <li>
+            Participation aussi bien au <strong>front-end</strong> (HTML, CSS, ergonomie) 
+            qu'au <strong>back-end</strong> (modèles, vues, base de données), 
+            ce qui m'a donné une vision globale du développement
+          </li>
+          <li>
+            Maîtrise de l'intégration d'APIs et de la gestion de fichiers médias
+          </li>
+        </ul>
+
+        <h3>Sur le plan personnel et méthodologique</h3>
+        <ul>
+          <li>
+            Expérience pratique d'une organisation de projet en mode <strong>agile</strong>, 
+            avec utilisation de Git de manière avancée 
+            (branches, merges, gestion de conflits)
+          </li>
+          <li>
+            Le fait de travailler directement avec un <strong>développeur expérimenté</strong> 
+            a été très enrichissant et m'a permis de <strong>découvrir plusieurs facettes du métier</strong>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 7 : Bilan -->
+      <section class="rapport-section" id="bilan">
+        <h2>7. Bilan et perspectives</h2>
+        <p>
+          Ce stage m'a permis de passer de la théorie à la pratique, d'acquérir une solide 
+          méthodologie de développement web et de découvrir la gestion d'un projet de bout en bout.
+        </p>
+        <p>
+          J'ai pu valider mes compétences en développement back-end avec Django, tout en 
+          développant ma polyvalence grâce à l'intégration front-end et à la gestion complète 
+          d'un module applicatif.
+        </p>
+        
+        <div class="highlight-box">
+          <h4>
+            Perspectives d'amélioration </h4>
+          <p>
+            Pour aller plus loin, des pistes d'amélioration pourraient être explorées :</p>
+          <ul>
+            <li>
+              Ajouter des <strong>tests automatisés</strong> (unitaires et fonctionnels) 
+              pour renforcer la fiabilité
+            </li>
+            <li>
+              Déployer la plateforme sur un <strong>hébergement cloud</strong> 
+            </li>
+            <li> 
+              Optimiser les performances grâce au caching ou à l'usage de WebSockets 
+              pour les fonctionnalités temps réel </li>
+            <li>
+              Implémenter une API REST complète pour permettre le développement 
+              d'applications mobiles
+            </li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 30px;">
+          Ce stage constitue une expérience fondamentale dans mon parcours de formation 
+          et renforce ma motivation à poursuivre dans le domaine du développement web.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>GestTravaux Pro – Version PHP – Elsa Dadoun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .projet-container {
+      max-width: 1000px;
+      margin: 100px auto 60px;
+      padding: 0 40px;
+      line-height: 1.7;
+    }
+
+    .projet-header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 40px;
+      background: linear-gradient(135deg, #8892BF, #4F5B93);
+      color: white;
+      border-radius: 16px;
+    }
+
+    .projet-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .projet-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+      font-size: 0.95rem;
+    }
+
+    .projet-info-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .projet-info-item strong {
+      color: #ffd700;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .projet-nav {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .projet-nav h3 {
+      margin: 0 0 15px 0;
+      font-size: 1.1rem;
+      color: #8892BF;
+    }
+
+    .projet-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .projet-nav li a {
+      display: block;
+      padding: 8px 16px;
+      background: #f0f1f8;
+      color: #8892BF;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .projet-nav li a:hover {
+      background: #8892BF;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .projet-section {
+      margin-bottom: 60px;
+      scroll-margin-top: 100px;
+    }
+
+    .projet-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #8892BF;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #ffd700;
+    }
+
+    .projet-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #4F5B93;
+      margin: 30px 0 20px;
+    }
+
+    .projet-section h4 {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin: 25px 0 15px;
+      font-weight: 600;
+    }
+
+    .projet-section p {
+      margin-bottom: 15px;
+      color: var(--text-main);
+    }
+
+    .projet-section ul, .projet-section ol {
+      margin: 15px 0 15px 25px;
+      color: var(--text-main);
+    }
+
+    .projet-section li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #f0f1f8;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid #8892BF;
+      margin: 25px 0;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .tech-item {
+      padding: 8px 16px;
+      background: #8892BF;
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .projet-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .projet-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: #8892BF;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .projet-btn:hover {
+      background: #4F5B93;
+      transform: translateY(-2px);
+    }
+
+    .projet-btn--secondary {
+      background: white;
+      color: #8892BF;
+      border: 2px solid #8892BF;
+    }
+
+    .projet-btn--secondary:hover {
+      background: #f0f1f8;
+    }
+
+    .image-placeholder {
+      background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+      border: 2px dashed #8892BF;
+      border-radius: 12px;
+      padding: 60px 20px;
+      text-align: center;
+      margin: 25px 0;
+      color: #666;
+    }
+
+    .image-placeholder h4 {
+      margin: 0 0 10px 0;
+      color: #8892BF;
+    }
+
+    .grid-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 25px 0;
+    }
+
+    @media (max-width: 768px) {
+      .projet-container {
+        padding: 0 20px;
+        margin-top: 80px;
+      }
+
+      .projet-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .projet-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .projet-nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAV -->
+  <header class="topbar">
+    <div class="topbar__logo"><a href="index.html" style="color: inherit; text-decoration: none;">Elsa Dadoun</a></div>
+    <nav class="topbar__nav">
+      <a href="index.html#about">À propos</a>
+      <a href="index.html#experience">Expérience</a>
+      <a href="index.html#skills">Compétences</a>
+      <a href="index.html#education">Formation</a>
+      <a href="index.html#contact" class="btn-pill btn-pill--small">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="projet-container">
+      
+      <!-- En-tête du projet -->
+      <div class="projet-header">
+        <h1>🐘 GestTravaux Pro – Version PHP</h1>
+        <p style="font-size: 1.2rem; margin: 10px 0;">Application Web avec Symfony</p>
+        
+        <div class="projet-info">
+          <div class="projet-info-item">
+            <strong>Framework</strong>
+            Symfony 6
+          </div>
+          <div class="projet-info-item">
+            <strong>Langage</strong>
+            PHP 8.1+
+          </div>
+          <div class="projet-info-item">
+            <strong>Base de données</strong>
+            MySQL
+          </div>
+          <div class="projet-info-item">
+            <strong>Type</strong>
+            Application Web
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="projet-actions">
+        <a href="projet-gesttravaux.html" class="projet-btn projet-btn--secondary">
+          ← Retour au projet
+        </a>
+        <a href="projet-gesttravaux-java.html" class="projet-btn projet-btn--secondary">
+          Voir la version Java →
+        </a>
+      </div>
+
+      <!-- Sections -->
+      <section class="projet-section" id="presentation">
+        <h2>Présentation</h2>
+        <p>Application web développée avec <strong>Symfony</strong>, offrant une interface accessible depuis n'importe quel navigateur pour la gestion complète des chantiers et la création de devis.</p>
+        
+        <div class="highlight-box">
+          <h4>🎯 Points clés</h4>
+          <ul>
+            <li>Application web responsive avec Symfony</li>
+            <li>Architecture MVC avec Doctrine ORM</li>
+            <li>Interface moderne avec Twig et Bootstrap</li>
+            <li>API REST et authentification sécurisée</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="projet-section" id="fonctionnalites">
+        <h2>Fonctionnalités principales</h2>
+
+        <h3>Gestion des chantiers</h3>
+        <ul>
+          <li>CRUD complet avec pagination et filtres</li>
+          <li>Recherche par nom, client, statut</li>
+          <li>Suivi de l'avancement en temps réel</li>
+          <li>Association des ressources et matériaux</li>
+        </ul>
+
+        <h3>Création de devis</h3>
+        <ul>
+          <li>Formulaires de saisie avec validation Symfony</li>
+          <li>Ajout dynamique de lignes (JavaScript)</li>
+          <li>Calcul automatique (HT, TVA, TTC)</li>
+          <li>Export PDF et envoi par email</li>
+        </ul>
+
+        <h3>Sécurité & Administration</h3>
+        <ul>
+          <li>Authentification avec Symfony Security</li>
+          <li>Gestion des rôles (USER, ADMIN)</li>
+          <li>Protection CSRF et XSS</li>
+          <li>API REST avec documentation</li>
+        </ul>
+      </section>
+
+      <section class="projet-section" id="technologies">
+        <h2>Technologies utilisées</h2>
+        <div class="tech-list">
+          <span class="tech-item">PHP 8.1+</span>
+          <span class="tech-item">Symfony 6</span>
+          <span class="tech-item">Doctrine ORM</span>
+          <span class="tech-item">Twig</span>
+          <span class="tech-item">MySQL</span>
+          <span class="tech-item">Bootstrap 5</span>
+        </div>
+      </section>
+
+      <section class="projet-section" id="captures">
+        <h2>Captures d'écran</h2>
+        <p style="margin-bottom: 30px;">Ajoutez ici vos captures d'écran de l'application web Symfony.</p>
+
+        <div class="image-placeholder">
+          <h4>🌐 Captures d'écran à ajouter</h4>
+          <p>Placez vos images dans <code>assets/images/</code> puis remplacez cette section par :</p>
+          <p style="margin-top: 15px;"><code>&lt;img src="assets/images/php-capture.png" alt="Capture" style="width:100%; border-radius:12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"&gt;</code></p>
+        </div>
+      </section>
+
+      <!-- Actions finales -->
+      <div class="projet-actions">
+        <a href="projet-gesttravaux.html" class="projet-btn projet-btn--secondary">
+          ← Retour au projet
+        </a>
+        <a href="projet-gesttravaux-java.html" class="projet-btn">
+          Voir la version Java →
+        </a>
+        <a href="index.html#experience" class="projet-btn projet-btn--secondary">
+          Retour au portfolio
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

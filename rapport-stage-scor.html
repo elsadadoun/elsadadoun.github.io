@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Rapport de Stage SCOR – Elsa Dadoun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .rapport-container {
+      max-width: 900px;
+      margin: 100px auto 60px;
+      padding: 0 40px;
+      line-height: 1.7;
+    }
+
+    .rapport-header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 40px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-darker));
+      color: white;
+      border-radius: 16px;
+    }
+
+    .rapport-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--pink-main);
+    }
+
+    .rapport-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+      font-size: 0.95rem;
+    }
+
+    .rapport-info-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .rapport-info-item strong {
+      color: var(--pink-main);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .rapport-nav {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .rapport-nav h3 {
+      margin: 0 0 15px 0;
+      font-size: 1.1rem;
+      color: var(--green-dark);
+    }
+
+    .rapport-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .rapport-nav li a {
+      display: block;
+      padding: 8px 16px;
+      background: var(--cream);
+      color: var(--text-main);
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .rapport-nav li a:hover {
+      background: var(--pink-main);
+      color: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .rapport-section {
+      margin-bottom: 60px;
+      scroll-margin-top: 100px;
+    }
+
+    .rapport-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--green-dark);
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid var(--pink-main);
+    }
+
+    .rapport-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--green-darker);
+      margin: 30px 0 20px;
+    }
+
+    .rapport-section h4 {
+      font-size: 1.2rem;
+      color: var(--text-main);
+      margin: 25px 0 15px;
+      font-weight: 600;
+    }
+
+    .rapport-section p {
+      margin-bottom: 15px;
+      color: var(--text-main);
+    }
+
+    .rapport-section ul, .rapport-section ol {
+      margin: 15px 0 15px 25px;
+      color: var(--text-main);
+    }
+
+    .rapport-section li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fff4d4;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid var(--pink-main);
+      margin: 25px 0;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    .tech-item {
+      padding: 8px 16px;
+      background: var(--green-dark);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .rapport-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .rapport-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--green-dark);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .rapport-btn:hover {
+      background: var(--green-darker);
+      transform: translateY(-2px);
+    }
+
+    .rapport-btn--secondary {
+      background: white;
+      color: var(--green-dark);
+      border: 2px solid var(--green-dark);
+    }
+
+    .rapport-btn--secondary:hover {
+      background: var(--cream);
+    }
+
+    .rapport-btn--small {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+
+    .coming-soon {
+      text-align: center;
+      padding: 60px 20px;
+      background: #fff4d4;
+      border-radius: 16px;
+      margin: 40px 0;
+    }
+
+    .coming-soon h3 {
+      font-size: 1.8rem;
+      color: var(--green-dark);
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .rapport-container {
+        padding: 0 20px;
+        margin-top: 80px;
+      }
+
+      .rapport-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .rapport-section h2 {
+        font-size: 1.5rem;
+      }
+
+      .rapport-nav ul {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAV -->
+  <header class="topbar">
+    <div class="topbar__logo"><a href="index.html" style="color: inherit; text-decoration: none;">Elsa Dadoun</a></div>
+    <nav class="topbar__nav">
+      <a href="index.html#about">À propos</a>
+      <a href="index.html#experience">Expérience</a>
+      <a href="index.html#skills">Compétences</a>
+      <a href="index.html#education">Formation</a>
+      <a href="index.html#contact" class="btn-pill btn-pill--small">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="rapport-container">
+      
+      <!-- En-tête du rapport -->
+      <div class="rapport-header">
+        <h1>Rapport de Stage</h1>
+        <p style="font-size: 1.2rem; margin: 10px 0;">BTS SIO 1<sup>ère</sup> année</p>
+        
+        <div class="rapport-info">
+          <div class="rapport-info-item">
+            <strong>Période</strong>
+            Janvier 2026
+          </div>
+          <div class="rapport-info-item">
+            <strong>Organisme</strong>
+            SCOR
+          </div>
+          <div class="rapport-info-item">
+            <strong>Enseignant référent</strong>
+            Jacques Buffeteau
+          </div>
+          <div class="rapport-info-item">
+            <strong>Tuteur de stage</strong>
+            Kevin Faussadier
+          </div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="rapport-actions">
+        <a href="index.html#experience" class="rapport-btn rapport-btn--secondary">
+          ← Retour au portfolio
+        </a>
+      </div>
+
+
+
+      <!-- Navigation sommaire (structure pour plus tard) -->
+      <nav class="rapport-nav">
+        <h3>📑 Sommaire (à compléter)</h3>
+        <ul>
+          <li><a href="#remerciements">Remerciements</a></li>
+          <li><a href="#presentation">Présentation</a></li>
+          <li><a href="#swot">Analyse SWOT</a></li>
+          <li><a href="#contexte">Contexte</a></li>
+          <li><a href="#missions">Missions</a></li>
+          <li><a href="#environnement">Environnement technique</a></li>
+          <li><a href="#apports">Apports du stage</a></li>
+          <li><a href="#bilan">Bilan</a></li>
+        </ul>
+      </nav>
+
+      <!-- Sections vides à compléter -->
+      <section class="rapport-section" id="remerciements">
+        <h2>1. Remerciements</h2>
+        <p><em>À compléter après le stage...</em></p>
+      </section>
+
+      <section class="rapport-section" id="presentation">
+        <h2>2. Présentation de l'organisme d'accueil</h2>
+        <div class="highlight-box">
+          <p>
+            <strong>SCOR</strong> est un acteur mondial de référence en réassurance, fondé en 1970. 
+            Le groupe accompagne les assureurs dans la gestion de leurs risques à travers deux activités principales :
+          </p>
+          <ul>
+            <li><strong>Réassurance Vie & Santé</strong> : protection des risques liés à la longévité, mortalité et santé</li>
+            <li><strong>Réassurance Dommages & Responsabilité</strong> : couverture des risques naturels, industriels et responsabilité civile</li>
+          </ul>
+          <p style="margin-top: 20px;">
+            <strong>📍 Siège social :</strong> Paris, France<br>
+            <strong>🌍 Présence mondiale :</strong> 38 bureaux dans le monde<br>
+            <strong>👥 Effectifs :</strong> Plus de 3 000 collaborateurs<br>
+            <strong>💼 Secteur :</strong> Assurance et réassurance internationale
+          </p>
+        </div>
+      </section>
+
+      <!-- Section SWOT : Analyse de SCOR -->
+      <section class="rapport-section" id="swot">
+        <h2>2bis. Analyse SWOT de SCOR</h2>
+        <p style="margin-bottom:30px;">
+          Analyse stratégique de l'entreprise.
+        </p>
+        
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:30px;">
+          <!-- Forces -->
+          <div style="background:#d4edda;padding:25px;border-radius:12px;border-left:4px solid #28a745;">
+            <h4 style="color:#155724;margin:0 0 15px 0;font-size:1.1rem;">💪 Forces</h4>
+            <ul style="margin:0;padding-left:20px;line-height:1.8;">
+              <li>Leader mondial de la réassurance</li>
+              <li>Excellente solidité financière</li>
+              <li>Présence internationale diversifiée</li>
+              <li>Expertise technique reconnue</li>
+            </ul>
+          </div>
+
+          <!-- Faiblesses -->
+          <div style="background:#f8d7da;padding:25px;border-radius:12px;border-left:4px solid #dc3545;">
+            <h4 style="color:#721c24;margin:0 0 15px 0;font-size:1.1rem;">⚠️ Faiblesses</h4>
+            <ul style="margin:0;padding-left:20px;line-height:1.8;">
+              <li>Exposition aux catastrophes naturelles</li>
+              <li>Complexité organisationnelle</li>
+              <li>Coûts opérationnels élevés</li>
+            </ul>
+          </div>
+
+          <!-- Opportunités -->
+          <div style="background:#d1ecf1;padding:25px;border-radius:12px;border-left:4px solid #17a2b8;">
+            <h4 style="color:#0c5460;margin:0 0 15px 0;font-size:1.1rem;">🚀 Opportunités</h4>
+            <ul style="margin:0;padding-left:20px;line-height:1.8;">
+              <li>Marchés émergents en croissance</li>
+              <li>Transformation digitale</li>
+              <li>Nouveaux risques (cyber, climatiques)</li>
+              <li>Intelligence artificielle et Big Data</li>
+            </ul>
+          </div>
+
+          <!-- Menaces -->
+          <div style="background:#fff3cd;padding:25px;border-radius:12px;border-left:4px solid #ffc107;">
+            <h4 style="color:#856404;margin:0 0 15px 0;font-size:1.1rem;">⚡ Menaces</h4>
+            <ul style="margin:0;padding-left:20px;line-height:1.8;">
+              <li>Augmentation des catastrophes naturelles</li>
+              <li>Instabilité économique mondiale</li>
+              <li>Concurrence accrue</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="rapport-section" id="contexte">
+        <h2>3. Contexte et objectifs du stage</h2>
+        <p>
+          Dans le cadre de ma première année de BTS SIO, j'ai effectué un stage de 5 semaines au sein du service informatique de SCOR. 
+          Ce stage avait pour objectifs principaux de :
+        </p>
+        <ul>
+          <li>Participer au support technique et à la gestion du parc informatique</li>
+          <li>Comprendre les processus de déploiement et de mise en conformité des postes de travail</li>
+          <li>Découvrir les enjeux de sécurité informatique en entreprise</li>
+          <li>Développer des compétences en automatisation et suivi d'incidents</li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong>📌 Outil central : ServiceNow</strong></p>
+          <p>
+            ServiceNow est la base de tous les écrans utilisés dans l'entreprise. Tous les tickets, l'inventaire du parc informatique 
+            et les backlogs sont gérés via cet outil de ticketing. Il permet une traçabilité complète de toutes les interventions.
+          </p>
+        </div>
+      </section>
+
+      <section class="rapport-section" id="missions">
+        <h2>4. Missions réalisées</h2>
+
+        <!-- Mission 1 -->
+        <h3>Mission 1 : Mise en conformité et préparation de laptops SCOR (Windows 11)</h3>
+        
+        <h4>Contexte et objectif</h4>
+        <p>
+          Dans le cadre du support informatique, j'ai participé à la préparation de postes utilisateurs (laptops) d'utilisateurs 
+          de l'entreprise afin qu'ils soient :
+        </p>
+        <ul>
+          <li>Conformes aux standards SCOR (configuration sécurité + paramètres entreprise)</li>
+          <li>À jour</li>
+          <li>Correctement inventoriés (suivi via outil de ticketing : ServiceNow)</li>
+        </ul>
+        <p>
+          L'objectif était de livrer des machines prêtes à l'emploi pour les utilisateurs, en réduisant les incidents liés 
+          aux mises à jour, aux pilotes ou à des configurations non conformes.
+        </p>
+
+        <h4>A) Préparation logicielle et mises à jour</h4>
+        <p><strong>Avant toute manipulation :</strong></p>
+        <ul>
+          <li>Connexion sur un compte admin (si nécessaire)</li>
+          <li>Vérification de l'état général de la machine (alimentation, réseau)</li>
+          <li>Branchement secteur obligatoire</li>
+        </ul>
+
+        <p><strong>Phase Préparation / Vérification des mises à jour Windows :</strong></p>
+        <ul>
+          <li>Regarder l'état des mises à jour</li>
+          <li>Installer les mises à jour proposées (redémarrer si demandé)</li>
+          <li>Vérifier qu'il ne reste plus de mises à jour critiques</li>
+        </ul>
+        <p style="font-style: italic; color: #666;">
+          Remarque : certains PC étaient déjà "masterisés", mais pas suffisamment à jour. 
+          Cette étape sert à les remettre au niveau attendu.
+        </p>
+
+        <p><strong>Mise à jour des drivers Lenovo (constructeur) :</strong></p>
+        <p>
+          Objectif : S'assurer que tous les composants du PC fonctionnent correctement (Wi-Fi, Bluetooth, audio, batterie, etc.) 
+          en installant les dernières mises à jour fournies par Lenovo en utilisant l'outil Lenovo System pour :
+        </p>
+        <ul>
+          <li>Rechercher les mises à jour de pilotes et firmware</li>
+          <li>Installer en priorité les mises à jour critiques</li>
+          <li>Redémarrer et effectuer un contrôle final</li>
+        </ul>
+
+        <h4>B) Phase de Masterisation / remise en conformité</h4>
+        <div class="highlight-box">
+          <h4 style="margin-top: 0;">Principe de la masterisation</h4>
+          <p>
+            La masterisation est un processus clé dans la gestion informatique des entreprises. Elle consiste à créer des masters 
+            prêts à l'emploi pour les postes de travail informatiques. Ces masters sont des images système qui incluent le système 
+            d'exploitation et les logiciels nécessaires.
+          </p>
+          <p><strong>Cela garantit :</strong></p>
+          <ul style="margin-bottom: 0;">
+            <li><strong>Uniformité :</strong> Les masters restent identiques quel que soit le matériel utilisé</li>
+            <li><strong>Flexibilité :</strong> L'ajout de nouveaux matériels n'oblige jamais à refaire les masters</li>
+            <li><strong>Gestion simplifiée :</strong> Les paramètres et logiciels s'installent automatiquement après le système d'exploitation</li>
+            <li><strong>Automatisation :</strong> L'installation fonctionne sur tout type d'ordinateur, ce qui facilite les déploiements massifs</li>
+          </ul>
+        </div>
+
+        <p>Selon le cas, il fallait :</p>
+        <ul>
+          <li>Accéder au menu de démarrage (Boot Menu : contrôle la communication entre les périphériques du système tels que le disque dur, l'écran et le clavier)</li>
+          <li>Ou à la configuration BIOS pour vérifier certains paramètres de sécurité</li>
+          <li>Puis lancer un démarrage sur l'outil prévu</li>
+        </ul>
+        <p style="font-style: italic; color: #666;">
+          Important : je suivais la procédure interne et je notais toute anomalie (message d'erreur, blocage, comportement anormal).
+        </p>
+
+        <p><strong>Prise de rendez-vous :</strong></p>
+        <p>
+          Dans certains cas, il faut une prise de rendez-vous / planification pour remplacement ou traitement, demandes complémentaires.
+        </p>
+
+        <p><strong>Identification du poste :</strong></p>
+        <p>
+          Pour chaque laptop préparé, je relevais les informations utiles : le nom du PC / hostname, l'utilisateur concerné, 
+          le numéro de série, les applications si précisées dans le formulaire.
+        </p>
+
+        <h4>C) Suivi du parc et inventaire (outil ServiceNow)</h4>
+        <p>
+          J'ai également mis à jour l'outil de suivi des tickets afin de garantir la traçabilité :
+        </p>
+        <ul>
+          <li>Ajout/modification du numéro de série</li>
+          <li>Mise à jour du statut (ex : "en stock", "en préparation", "attribué"...)</li>
+          <li>Mise à jour de la localisation (ex : stock / salle)</li>
+        </ul>
+        <p>
+          L'objectif est que l'équipe support puisse savoir où est le matériel et dans quel état il se trouve, sans perdre de temps.
+        </p>
+
+        <div class="highlight-box">
+          <h4 style="margin-top: 0;">🌍 Réalisation de masters pour bureaux internationaux</h4>
+          <p>
+            Dans le cadre de la mission de préparation et de mise en conformité des laptops SCOR, j'ai également participé à 
+            la création et à la mise à jour des masters destinés aux bureaux internationaux, notamment :
+          </p>
+          <ul>
+            <li><strong>BUH</strong> – Bucarest (Roumanie)</li>
+            <li><strong>CAS</strong> – Casablanca (Maroc)</li>
+            <li><strong>AMD</strong> – Amsterdam (Pays-Bas)</li>
+          </ul>
+          <p>
+            L'objectif principal était de garantir que tous les postes distribués dans ces différentes entités respectent 
+            strictement les standards SCOR, malgré les différences régionales (langue, configuration réseau, fuseau horaire, 
+            politiques locales éventuelles).
+          </p>
+          <p><strong>Ces masters permettent de :</strong></p>
+          <ul style="margin-bottom: 0;">
+            <li>Déployer rapidement de nouveaux laptops dans les bureaux internationaux</li>
+            <li>Assurer une uniformité totale du parc informatique</li>
+            <li>Réduire les incidents liés à des configurations non conformes</li>
+            <li>Simplifier le travail des équipes locales grâce à des machines prêtes à l'emploi</li>
+          </ul>
+        </div>
+
+        <!-- Mission 2 -->
+        <h3 style="margin-top: 50px;">Mission 2 : Configuration de clés YubiKey (sécurisation MFA)</h3>
+        
+        <h4>Objectif</h4>
+        <p>
+          J'ai aussi configuré des clés YubiKey destinées à renforcer la sécurité des comptes via la double authentification (MFA).
+        </p>
+        <div class="highlight-box">
+          <p>
+            La <strong>MFA (authentification multifactorielle)</strong> permet de sécuriser l'accès en ajoutant une seconde preuve 
+            en plus du mot de passe (ex : clé physique, application d'authentification, code...).
+            Cela réduit fortement les risques en cas de vol de mot de passe.
+          </p>
+        </div>
+
+        <h4>Qu'est-ce qu'une YubiKey ?</h4>
+        <p>
+          La YubiKey est un dispositif électronique d'authentification forte fabriqué par Yubico qui supporte les mots de passe 
+          à usage unique, le chiffrement, l'authentification par clé publique et le protocole Universal Second Factor (U2F) 
+          développé par l'alliance FIDO.
+        </p>
+        <p>
+          Elle permet de prévenir les tentatives de piratage de compte et offre une protection efficace contre le phishing. 
+          Elle assure la sécurité des systèmes classiques et modernes.
+        </p>
+
+        <h4>Configuration</h4>
+        <ul>
+          <li>Préparation / initialisation de clés YubiKey (selon procédure interne)</li>
+          <li>Association au mécanisme de double authentification utilisé dans l'entreprise</li>
+          <li>Vérification que la clé fonctionne correctement</li>
+        </ul>
+        <p><strong>Volume :</strong> Configuration effectuée sur une série de clés (environ 300).</p>
+
+        <!-- Mini-projet -->
+        <h3 style="margin-top: 50px;">Mini-projet : Développement d'une macro Excel (VBA)</h3>
+        
+        <p>
+          Dans le cadre de mes missions, j'ai été chargée d'automatiser le suivi des tickets d'appels enregistrés dans l'outil 
+          Excel utilisé par l'équipe. Pour cela, j'ai développé une macro VBA permettant de compter automatiquement le nombre 
+          de tickets dans chaque catégorie :
+        </p>
+        <div class="tech-list">
+          <span class="tech-item">Feedback</span>
+          <span class="tech-item">General inquiry</span>
+          <span class="tech-item">Incident</span>
+          <span class="tech-item">Misplaced call</span>
+          <span class="tech-item">Request</span>
+          <span class="tech-item">Status call</span>
+        </div>
+
+        <p>
+          Cette automatisation a permis de remplacer les comptages manuels, souvent longs et sources d'erreurs. La macro analyse 
+          la colonne dédiée aux typologies, identifie chaque libellé, puis calcule en quelques millisecondes le volume total de 
+          chaque catégorie. Les résultats sont ensuite affichés dans une fenêtre récapitulative et peuvent être exportés dans une 
+          feuille dédiée pour faciliter le contrôle qualité et le reporting de l'équipe.
+        </p>
+      </section>
+
+      <section class="rapport-section" id="environnement">
+        <h2>5. Environnement technique</h2>
+        
+        <h4>Systèmes d'exploitation</h4>
+        <div class="tech-list">
+          <span class="tech-item">Windows 11</span>
+          <span class="tech-item">Windows 10</span>
+        </div>
+
+        <h4>Outils et logiciels</h4>
+        <div class="tech-list">
+          <span class="tech-item">ServiceNow</span>
+          <span class="tech-item">Lenovo System Update</span>
+          <span class="tech-item">Boot Menu / BIOS</span>
+          <span class="tech-item">Outils de masterisation SCOR</span>
+        </div>
+
+        <h4>Sécurité</h4>
+        <div class="tech-list">
+          <span class="tech-item">YubiKey (Yubico)</span>
+          <span class="tech-item">MFA / 2FA</span>
+          <span class="tech-item">U2F Protocol</span>
+        </div>
+
+        <h4>Développement</h4>
+        <div class="tech-list">
+          <span class="tech-item">Excel VBA</span>
+          <span class="tech-item">Macros</span>
+        </div>
+
+        <h4>Matériel</h4>
+        <div class="tech-list">
+          <span class="tech-item">Lenovo ThinkPad</span>
+          <span class="tech-item">YubiKey (dispositifs physiques)</span>
+        </div>
+      </section>
+
+      <section class="rapport-section" id="apports">
+        <h2>6. Apports du stage</h2>
+        <p><em>À compléter : compétences acquises, apprentissages...</em></p>
+      </section>
+
+      <section class="rapport-section" id="bilan">
+        <h2>7. Bilan et perspectives</h2>
+        <p><em>À compléter : bilan personnel, perspectives...</em></p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
