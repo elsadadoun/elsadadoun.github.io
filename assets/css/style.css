@@ -480,6 +480,15 @@ body {
   gap: 40px; /* Plus d'espace pour les rotations Polaroid */
 }
 
+/* Centrer le 3e élément (mini-projet) s'il est seul sur sa ligne */
+.resume__experience-list > :nth-child(3) {
+  grid-column: 1 / -1;
+  width: fit-content;
+  margin: 0 auto;
+  opacity: 0.9;
+  transform: scale(0.9);
+}
+
 /* Bloc Langues / Hobbies côte à côte */
 
 .resume-block--columns {
