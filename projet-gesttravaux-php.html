@@ -390,29 +390,43 @@
       <section class="projet-section" id="fonctionnalites">
         <h2>Fonctionnalités principales</h2>
 
-        <h3>Gestion des chantiers</h3>
-        <ul>
-          <li>CRUD complet avec pagination et filtres</li>
-          <li>Recherche par nom, client, statut</li>
-          <li>Suivi de l'avancement en temps réel</li>
-          <li>Association des ressources et matériaux</li>
-        </ul>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">👨‍💼</div>
+            <h3>Inspecteur (PWA Mobile)</h3>
+            <p>Consultation des chantiers assignés, localisation sur carte, saisie d'observations, prise de photos, ajout de documents (DPE, diagnostic bruit…), synchronisation hors-ligne.</p>
+          </div>
 
-        <h3>Création de devis</h3>
-        <ul>
-          <li>Formulaires de saisie avec validation Symfony</li>
-          <li>Ajout dynamique de lignes (JavaScript)</li>
-          <li>Calcul automatique (HT, TVA, TTC)</li>
-          <li>Export PDF et envoi par email</li>
-        </ul>
+          <div class="feature-card">
+            <div class="feature-icon">🏢</div>
+            <h3>Espace Entrepreneur</h3>
+            <p>Dashboard des demandes, consultation du devis type, soumission de propositions validées par Symfony, suivi des statuts en temps réel, gestion des prestations.</p>
+          </div>
 
-        <h3>Sécurité & Administration</h3>
-        <ul>
-          <li>Authentification avec Symfony Security</li>
-          <li>Gestion des rôles (USER, ADMIN)</li>
-          <li>Protection CSRF et XSS</li>
-          <li>API REST avec documentation</li>
-        </ul>
+          <div class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3>Administration Système</h3>
+            <p>Gestion des utilisateurs et rôles, configuration des paramètres applicatifs, supervision globale sécurisée, rapports et analytics, permissions granulaires.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3>Carte Interactive</h3>
+            <p>Localisation des biens immobiliers sur carte, navigation facilitée pour les inspecteurs en terrain, intégration API géolocalisation.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Gestion des Devis</h3>
+            <p>Consultation du devis type standardisé, soumission des propositions par entrepreneurs, calcul automatique (HT, TVA, TTC), export PDF et email.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📄</div>
+            <h3>Documents & Photos</h3>
+            <p>Upload et gestion des fichiers d'inspection, support des formats (DPE, diagnostics, photos), saisie depuis le terrain, organisation centralisée et sécurisée.</p>
+          </div>
+        </div>
       </section>
 
       <section class="projet-section" id="technologies">
