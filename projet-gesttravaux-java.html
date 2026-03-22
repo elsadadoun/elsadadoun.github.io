@@ -329,6 +329,133 @@
       margin: 15px auto;
     }
 
+    /* Gallery styles */
+    .gallery-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+      position: relative;
+    }
+
+    .gallery-btn {
+      background: #D8629B;
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(216, 98, 155, 0.3);
+    }
+
+    .gallery-btn:hover {
+      background: #C94E7F;
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(216, 98, 155, 0.5);
+    }
+
+    .gallery-btn:active {
+      transform: scale(0.95);
+    }
+
+    .gallery-btn span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-container {
+      flex: 1;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .gallery-image-wrapper {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      min-height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    #galleryImage {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+    .gallery-counter {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 10px 0 8px 0;
+      font-weight: 500;
+    }
+
+    .gallery-caption {
+      font-style: italic;
+      color: #666;
+      font-size: 0.95rem;
+      margin: 8px 0 0 0;
+      line-height: 1.5;
+    }
+
+    .gallery-thumbnails {
+      margin-top: 30px;
+      padding: 20px 0;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .thumbnail-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 10px 0;
+      justify-content: center;
+      scroll-behavior: smooth;
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 3px solid transparent;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .thumbnail.active {
+      border-color: #D8629B;
+      box-shadow: 0 4px 12px rgba(216, 98, 155, 0.5);
+    }
+
     @media (max-width: 768px) {
       .projet-container {
         padding: 0 20px;
@@ -345,6 +472,38 @@
 
       .projet-nav ul {
         flex-direction: column;
+      }
+
+      .gallery-wrapper {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .gallery-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+
+      .gallery-container {
+        width: 100%;
+        order: 2;
+      }
+
+      .gallery-btn--prev {
+        order: 1;
+      }
+
+      .gallery-btn--next {
+        order: 3;
+      }
+
+      .gallery-image-wrapper {
+        min-height: 300px;
+      }
+
+      #galleryImage {
+        max-height: 350px;
       }
     }
   </style>
@@ -502,50 +661,30 @@
 
       <section class="projet-section" id="captures">
         <h2>Captures d'écran</h2>
-        <p style="margin-bottom: 30px;">Voici un aperçu des principales fonctionnalités de l'application JavaFX GestTravaux Pro.</p>
+        <p style="margin-bottom: 30px;">Voici un aperçu détaillé des principales fonctionnalités de l'application JavaFX GestTravaux Pro. Utilisez les flèches pour naviguer entre les images.</p>
 
-        <h3>Modèle de la base de données</h3>
-        <div class="projet-image-container mcd-small">
-          <img src="assets/images/gesttravaux-JAVA/modele_bdd.jpeg" alt="Modèle Conceptuel de Données GESTTRAVAUX" class="projet-image">
-          <p class="projet-image-caption">Diagramme du Modèle Conceptuel de Données (MCD) de GESTTRAVAUX</p>
-        </div>
+        <div class="gallery-wrapper">
+          <button class="gallery-btn gallery-btn--prev" id="prevBtn" aria-label="Image précédente">
+            <span>❮</span>
+          </button>
 
-        <h3>Gestion des biens immobiliers</h3>
-        <div class="projet-images-double">
-          <div class="projet-image-container">
-            <img src="assets/images/gesttravaux-JAVA/liste_biens.png" alt="Liste des biens" class="projet-image">
-            <p class="projet-image-caption">Liste des biens immobiliers</p>
+          <div class="gallery-container">
+            <div class="gallery-image-wrapper">
+              <img id="galleryImage" src="" alt="Capture d'écran" class="projet-image">
+            </div>
+            <p class="gallery-counter"><span id="imageCounter">1</span> / <span id="totalCounter">17</span></p>
+            <p class="gallery-caption" id="galleryCaption"></p>
           </div>
 
-          <div class="projet-image-container">
-            <img src="assets/images/gesttravaux-JAVA/creation_bien.png" alt="Création d'un bien" class="projet-image">
-            <p class="projet-image-caption">Formulaire de création d'un bien</p>
-          </div>
+          <button class="gallery-btn gallery-btn--next" id="nextBtn" aria-label="Image suivante">
+            <span>❯</span>
+          </button>
         </div>
 
-        <h3>Gestion des chantiers</h3>
-        <div class="projet-images-double">
-          <div class="projet-image-container">
-            <img src="assets/images/gesttravaux-JAVA/liste_chantiers.png" alt="Liste des chantiers" class="projet-image">
-            <p class="projet-image-caption">Liste des chantiers en cours</p>
+        <div class="gallery-thumbnails">
+          <div class="thumbnail-scroll" id="thumbnailScroll">
+            <!-- Les miniatures seront générées en JavaScript -->
           </div>
-
-          <div class="projet-image-container">
-            <img src="assets/images/gesttravaux-JAVA/modification_chantier.png" alt="Modification d'un chantier" class="projet-image">
-            <p class="projet-image-caption">Modification d'un chantier</p>
-          </div>
-        </div>
-
-        <h3>Gestion des inspecteurs</h3>
-        <div class="projet-image-container">
-          <img src="assets/images/gesttravaux-JAVA/liste_inspecteurs.png" alt="Liste des inspecteurs" class="projet-image">
-          <p class="projet-image-caption">Liste des inspecteurs assignés</p>
-        </div>
-
-        <h3>Envoi de chantiers aux entrepreneurs</h3>
-        <div class="projet-image-container">
-          <img src="assets/images/gesttravaux-JAVA/envoi_chantier.png" alt="Envoi de chantier" class="projet-image">
-          <p class="projet-image-caption">Sélection et envoi de chantiers aux entrepreneurs qualifiés</p>
         </div>
       </section>
 
@@ -566,5 +705,127 @@
   </main>
 
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Gallery data with descriptions
+    const galleryImages = [
+      { file: 'accueil.png', caption: 'Écran d\'accueil de l\'application' },
+      { file: 'connexion.png', caption: 'Formulaire de connexion' },
+      { file: 'dashboard.png', caption: 'Tableau de bord principal' },
+      { file: 'liste_proprietaire.png', caption: 'Liste des propriétaires' },
+      { file: 'ajout_proprietaire.png', caption: 'Ajout d\'un propriétaire' },
+      { file: 'modif_proprietaire.png', caption: 'Modification d\'un propriétaire' },
+      { file: 'liste_biens.png', caption: 'Liste des biens immobiliers' },
+      { file: 'modif_biens.png', caption: 'Modification d\'un bien' },
+      { file: 'chantiers_liste.png', caption: 'Liste des chantiers en cours' },
+      { file: 'creation_chantiers.png', caption: 'Création d\'un nouveau chantier' },
+      { file: 'modification_chantier.png', caption: 'Modification d\'un chantier' },
+      { file: 'envoi_chantier.png', caption: 'Envoi de chantier aux entrepreneurs' },
+      { file: 'ajout_inspecteur.png', caption: 'Ajout d\'un inspecteur' },
+      { file: 'modif_inspecteur.png', caption: 'Modification d\'un inspecteur' },
+      { file: 'creation_devistype.png', caption: 'Création d\'un type de devis' },
+      { file: 'prestations_liste.png', caption: 'Liste des prestations disponibles' },
+      { file: 'ajout_entrepreneur.png', caption: 'Ajout d\'un entrepreneur' }
+    ];
+
+    let currentIndex = 0;
+
+    function initGallery() {
+      updateGallery();
+      createThumbnails();
+    }
+
+    function updateGallery() {
+      const image = galleryImages[currentIndex];
+      const imagePath = `assets/images/gesttravaux-JAVA/final/${image.file}`;
+      
+      document.getElementById('galleryImage').src = imagePath;
+      document.getElementById('galleryCaption').textContent = image.caption;
+      document.getElementById('imageCounter').textContent = currentIndex + 1;
+      document.getElementById('totalCounter').textContent = galleryImages.length;
+
+      // Update thumbnail highlights
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      thumbnails.forEach((thumb, index) => {
+        thumb.classList.toggle('active', index === currentIndex);
+      });
+
+      // Scroll only the thumbnail container, not the page
+      if (thumbnails[currentIndex]) {
+        const container = document.getElementById('thumbnailScroll');
+        const thumb = thumbnails[currentIndex];
+        const thumbLeft = thumb.offsetLeft;
+        const thumbWidth = thumb.offsetWidth;
+        const containerLeft = container.scrollLeft;
+        const containerWidth = container.clientWidth;
+
+        if (thumbLeft < containerLeft) {
+          container.scrollLeft = thumbLeft - 10;
+        } else if (thumbLeft + thumbWidth > containerLeft + containerWidth) {
+          container.scrollLeft = thumbLeft + thumbWidth - containerWidth + 10;
+        }
+      }
+    }
+
+    function createThumbnails() {
+      const container = document.getElementById('thumbnailScroll');
+      container.innerHTML = '';
+
+      galleryImages.forEach((image, index) => {
+        const thumb = document.createElement('div');
+        thumb.className = 'thumbnail' + (index === 0 ? ' active' : '');
+        thumb.innerHTML = `<img src="assets/images/gesttravaux-JAVA/final/${image.file}" alt="Miniature ${index + 1}">`;
+        thumb.addEventListener('click', () => {
+          currentIndex = index;
+          updateGallery();
+        });
+        container.appendChild(thumb);
+      });
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      updateGallery();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      updateGallery();
+    }
+
+    // Event listeners
+    document.getElementById('nextBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      nextImage();
+    });
+    document.getElementById('prevBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      prevImage();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      const gallerySection = document.querySelector('.projet-section#captures');
+      if (!gallerySection) return;
+      
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        nextImage();
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevImage();
+      }
+    });
+
+    // Initialize gallery when page loads
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initGallery);
+    } else {
+      initGallery();
+    }
+  </script>
 </body>
 </html>
